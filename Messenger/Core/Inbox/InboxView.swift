@@ -13,8 +13,11 @@ struct InboxView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
+                // persons active now
                 ActiveNowView()
                 
+                
+                // list of chats
                 List {
                     ForEach(0...10, id: \.self) { message in
                         InboxRowView()
