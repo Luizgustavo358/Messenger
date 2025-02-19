@@ -18,6 +18,8 @@ struct NewMessageView: View {
                     .frame(height: 44)
                     .padding(.leading)
                     .background(Color(.systemGroupedBackground))
+                    .cornerRadius(10)
+                    .padding(.horizontal, 14)
                 
                 Text("CONTACTS")
                     .foregroundColor(.gray)
