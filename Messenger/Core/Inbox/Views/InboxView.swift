@@ -19,24 +19,35 @@ struct InboxView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            List {
                 // persons active now
                 ActiveNowView()
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .padding(.vertical)
+                    .padding(.horizontal, 4)
                 
                 
                 // list of chats
-                List {
-                    ForEach(0...10, id: \.self) { message in
-                        InboxRowView()
+                ForEach(viewModel.recentMessages) { message in
+                    ZStack {
+                        NavigationLink(value: message) {
+                            EmptyView()
+                        }.opacity(0.0)
+                        
+                        InboxRowView(message: message)
                     }
                 }
-                .listStyle(PlainListStyle())
-                .frame(height: UIScreen.main.bounds.height - 120)
-                
             }
+            .listStyle(PlainListStyle())
             .onChange(of: selectedUser) { _, newValue in
                 showChat = newValue != nil
             }
+            .navigationDestination(for: Message.self, destination: { message in
+                if let user = message.user {
+                    ChatView(user: user)
+                }
+            })
             .navigationDestination(for: User.self, destination: { user in
                 ProfileView(user: user)
             })
@@ -64,6 +75,7 @@ struct InboxView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showMessageView.toggle()
+                        selectedUser = nil
                     } label: {
                         Image(systemName: "square.and.pencil.circle.fill")
                             .resizable()
