@@ -24,7 +24,7 @@ A aplicação de chat entre usuários.
 
 | Inbox              | Perfil               |
 |--------------------|----------------------|
-| ![](img/inbox.jpg) | ![](img/profile.jpg) |
+| ![](img/inbox.jpg) | ![](img/Profile.jpg) |
 
 ---
 
