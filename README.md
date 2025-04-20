@@ -14,14 +14,17 @@
 A aplicação de chat entre usuários.
 
 ## Descrição das Telas
-| Cadastro              | Criar Usuário         | Chats              |
-|-----------------------|-----------------------|--------------------|
-| ![](img/login.jpg)    | ![](img/register.jpg) | ![](img/chats.jpg) |
+| Cadastro              | Criar Usuário         |
+|-----------------------|-----------------------|
+| ![](img/login.jpg)    | ![](img/register.jpg) |
 
+| Chats              | Nova Mensagem           |
+|--------------------|-------------------------|
+| ![](img/chats.jpg) | ![](img/newMessage.jpg) |
 
-| Nova Mensagem           | Inbox              | Perfil               |
-|-------------------------|--------------------|----------------------|
-| ![](img/newMessage.jpg) | ![](img/inbox.jpg) | ![](img/profile.jpg) |
+| Inbox              | Perfil               |
+|--------------------|----------------------|
+| ![](img/inbox.jpg) | ![](img/profile.jpg) |
 
 ---
 
